@@ -66,7 +66,7 @@ namespace Risk_new.Controllers
 
             ViewBag.Message = model.Score;
 
-            return View(model);
+            return View(model); 
         }
     }
 }
