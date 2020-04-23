@@ -25,7 +25,7 @@ namespace Risk_new.Controllers
         [HttpGet]
         public IActionResult Amount()
         {
-            return View();
+            return View(new HomeViewModel());
         }
         [HttpPost]
         public IActionResult Amount(HomeViewModel model)
@@ -65,7 +65,6 @@ namespace Risk_new.Controllers
             model.Score = Convert.ToInt32(model.Soliders);
 
             ViewBag.Message = model.Score;
-
             return View(model); 
         }
     }

@@ -2,60 +2,55 @@
 @{
     Layout = "_Layout_ryzyko";
 }
-<head>
-    <link rel="stylesheet" type="text/css" href="~/css/Risk.css">
-</head>
-<body>
-    <form asp-controller="Home" asp-action="Amount" method="post">
-        <div class="allContainers">
-            <div class="amountOfSoliders">Ilość przysługujących żołnierzy</div>
-            <div style="background-color:#FF4444; color:white;text-align:center;    ">
-                &#8594; @Html.DisplayFor(x => x.Score) &#8592;
-            </div>
-
-            <div >
-                <div class="userInput">Ilość państw</div>
-                <input asp-for="Countries" class="inputShape" placeholder="Ilość państw" />
-            </div>
-            <div >
-                <div class="userInput">Liczba pod koniem</div>
-                <input asp-for="UnderHorse"  class="inputShape" placeholder="Liczba pod koniem" />
-            </div>
-            <div class="checkbox">
-                <div>
-                    <label class="countries">
-                        Azja
-                        <input type="checkbox"  id="singleCheckBox" name="Azja" value="true">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="countries">
-                        Europa
-                        <input type="checkbox"  id="singleCheckBox" name="Europa" value="true">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="countries">
-                        Afryka
-                        <input type="checkbox"  id="singleCheckBox" name="Afryka" value="true">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="countries">
-                        Ameryka Północna
-                        <input type="checkbox" id="singleCheckBox" name="AmerykaPln" value="true">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="countries">
-                        Ameryka Południowa
-                        <input type="checkbox"  id="singleCheckBox" name="AmerykaPld" value="true">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="countries">
-                        Australia
-                        <input type="checkbox"  id="singleCheckBox" name="Australia" value="true">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <input class="button" type="submit" value="Ilość żołnierzy" />
-            </div>
+<form asp-controller="Home" asp-action="Amount" method="post">
+    <div class="allContainers">
+        <div class="amountOfSoliders">Ilość przysługujących żołnierzy</div>
+        <div style="background-color:#FF4444; color:white;text-align:center;    ">
+            &#8594; @Html.DisplayFor(x => x.Score) &#8592;
         </div>
-    </form>
-</body>
+
+        <div>
+            <div class="userInput">Ilość państw</div>
+            <input asp-for="Countries" class="inputShape" type="number" placeholder="Ilość państw" />
+        </div>
+        <div>
+            <div class="userInput">Liczba pod koniem</div>
+            <input asp-for="UnderHorse" class="inputShape" type="number" placeholder="Liczba pod koniem" />
+        </div>
+        <div class="checkbox">
+            <div>
+                <label class="countries">
+                    Azja
+                    <input type="checkbox" id="singleCheckBox" name="Azja" value="true">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="countries">
+                    Europa
+                    <input type="checkbox" id="singleCheckBox" name="Europa" value="true">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="countries">
+                    Afryka
+                    <input type="checkbox" id="singleCheckBox" name="Afryka" value="true">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="countries">
+                    Ameryka Północna
+                    <input type="checkbox" id="singleCheckBox" name="AmerykaPln" value="true">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="countries">
+                    Ameryka Południowa
+                    <input type="checkbox" id="singleCheckBox" name="AmerykaPld" value="true">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="countries">
+                    Australia
+                    <input type="checkbox" id="singleCheckBox" name="Australia" value="true">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <input class="button" type="submit" value="Ilość żołnierzy" />
+        </div>
+    </div>
+</form>
