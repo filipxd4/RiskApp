@@ -6,19 +6,22 @@
     <div class="allContainers">
         <div class="amountOfSoliders">Ilość przysługujących żołnierzy</div>
         <div style="background-color:#FF4444; color:white;text-align:center;    ">
-            &#8594; @Html.DisplayFor(x => x.Score) &#8592;
+            &#8594; @ViewBag.Score &#8592;
         </div>
 
         <div>
             <div class="userInput">Ilość państw</div>
             <input asp-for="Countries" class="inputShape" type="number" placeholder="Ilość państw" />
+            <span asp-validation-for="Countries" class="text-danger"></span>
         </div>
         <div>
             <div class="userInput">Liczba pod koniem</div>
             <input asp-for="UnderHorse" class="inputShape" type="number" placeholder="Liczba pod koniem" />
+            <span asp-validation-for="UnderHorse" class="text-danger"></span>
+
         </div>
         <div class="checkbox">
-            <div>
+            <div id="checboxes-align-center">
                 <label class="countries">
                     Azja
                     <input type="checkbox" id="singleCheckBox" name="Azja" value="true">

@@ -25,47 +25,29 @@ namespace Risk_new.Controllers
         [HttpGet]
         public IActionResult Amount()
         {
-            return View(new HomeViewModel());
+            return View();
         }
+
         [HttpPost]
         public IActionResult Amount(HomeViewModel model)
         {
-            if (model.Azja == true)
-            {
+            if (model.Azja)
                 model.Soliders = model.Soliders + 7;
-            }
-            //
-            if (model.Europa == true)
-            {
+            if (model.Europa)
                 model.Soliders = model.Soliders + 5;
-            }
-            //
-            if (model.Afryka == true)
-            {
+            if (model.Afryka)
                 model.Soliders = model.Soliders + 3;
-            }
-            //
-            if (model.AmerykaPln == true)
-            {
+            if (model.AmerykaPln)
                 model.Soliders = model.Soliders + 5;
-            }
-            //
-            if (model.AmerykaPld == true)
-            {
+            if (model.AmerykaPld)
                 model.Soliders = model.Soliders + 2;
-            }
-            //
-            if (model.Australia == true)
-            {
+            if (model.Australia)
                 model.Soliders = model.Soliders + 2;
-            }
 
-            model.Soliders = (model.Soliders + model.UnderHorse + model.Countries) / 3;
-
-            model.Score = Convert.ToInt32(model.Soliders);
-
-            ViewBag.Message = model.Score;
-            return View(model); 
+            model.Score = Convert.ToInt32((model.Soliders + model.UnderHorse + model.Countries) / 3);
+            ViewBag.Score = model.Score;
+            ModelState.Clear();
+            return View(new HomeViewModel()); 
         }
     }
 }
